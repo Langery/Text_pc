@@ -1,2 +1,2 @@
 # hx_pc
-plan of hx_pc
+The plan is about of project
