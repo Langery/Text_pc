@@ -8,13 +8,11 @@
 export default {
   name: 'App'
 }
-window.onload=function(){
-
-  //const loginInfo = sessionStorage.getItem('loginInfo');
- // debugger;
-  // window.postMessage(sessionStorage.getItem('loginInfo'), "http://127.0.0.1:8080")
+window.onload = function () {
+  // const loginInfo = sessionStorage.getItem('loginInfo')
+  // debugger
+  // window.postMessage(sessionStorage.getItem('loginInfo'), 'http://127.0.0.1:8080')
 }
-
 </script>
 
 <style>

@@ -1,70 +1,59 @@
 <template>
   <div class="mainInfor">
-    <!--集成区域start-->
+    <!-- 集成区域start -->
     <div style="margin-top:65px;margin-left:75px">
       <iframe frameborder=0   id="showindex" name="showHere"
               scrolling="auto">
       </iframe>
     </div>
-    <!--集成区域end-->
+    <!-- 集成区域end -->
   </div>
 </template>
 
 <script>
-  window.onload=function(){
-    const loginInfo = sessionStorage.getItem('loginInfo');
-    document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), "http://127.0.0.1:8080")
-     //document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), "https://vnap-webrtctest.ihxlife.com")
-
-  }
-  export default {
-    components: {
-      'UserInfor': () => import('@/view/mainView/MainIndex/userInfor'),
-      'ServWarn': () => import('@/view/mainView/MainIndex/servWarn'),
-      'UserRecord': () => import('@/view/mainView/MainIndex/userRecord'),
-      'ServSummary': () => import('@/view/mainView/MainIndex/servSummary'),
-      'SessionInfo': () => import('@/view/mainView/MainIndex/sessionInfo'),
-      'TalkBox': () => import('@/view/mainView/MainIndex/talkBox'),
-      'MsgHelper': () => import('@/view/mainView/MainIndex/msgHelper')
+window.onload = function () {
+  // const loginInfo = sessionStorage.getItem('loginInfo')
+  document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'http://127.0.0.1:8080')
+  // document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'https://vnap-webrtctest.ihxlife.com')
+}
+export default {
+  data () {
+    return {
+      UserId: sessionStorage.csId,
+      iframeState: false,
+      csType: null,
+      jumpList: [
+        {
+          // img: one,
+          // link: '/user/home/user=12345678'
+        }
+      ]
+    }
+  },
+  mounted () {
+    // alert(1);
+    this.$nextTick(() => {
+      const indexShow = document.getElementById('showindex')
+      // indexShow.src = "https://vnap-webrtctest.ihxlife.com/videocs/home"
+      indexShow.src = 'http://127.0.0.1:8080/videocs/home'
+      const deviceWidth = document.documentElement.clientWidth
+      const deviceHeight = document.documentElement.clientHeight
+      indexShow.style.width = deviceWidth + 'px'
+      indexShow.style.height = deviceHeight + 'px'
+      this.csType = this.$route.query.csType ? this.$route.query.csType : 1
+    })
+  },
+  methods: {
+    showIframe () {
+      this.iframeState = true
     },
-    data() {
-      return {
-        UserId: sessionStorage.csId,
-        iframeState: false,
-        csType: null,
-        jumpList: [
-          {
-            //img: one,
-            //link: '/user/home/user=12345678'
-          }
-        ]
-      }
-    },
-    mounted() {
-     // alert(1);
-      this.$nextTick(() => {
-
-        const indexShow = document.getElementById('showindex');
-        //indexShow.src = "https://vnap-webrtctest.ihxlife.com/videocs/home";
-       indexShow.src = "http://127.0.0.1:8080/videocs/home";
-        const deviceWidth = document.documentElement.clientWidth
-        const deviceHeight = document.documentElement.clientHeight
-        indexShow.style.width = deviceWidth + 'px'
-        indexShow.style.height = deviceHeight + 'px'
-        this.csType = this.$route.query.csType ? this.$route.query.csType : 1
-      })
-    },
-    methods: {
-      showIframe() {
-        this.iframeState = true
-      },
-      postMsg() {
-        // debugger;
-       // const loginInfo = sessionStorage.getItem('loginInfo');
-        //document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), "http://127.0.0.1:8080")
-      }
+    postMsg () {
+      // debugger
+      // const loginInfo = sessionStorage.getItem('loginInfo')
+      // document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), "http://127.0.0.1:8080")
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
