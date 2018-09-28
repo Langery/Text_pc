@@ -87,13 +87,6 @@ export default {
       // console.log(ERR_OK) 0
       if (res.result.code === ERR_OK) {
         console.log('==========================> post success')
-        // sessionStorage.setItem('csId', res.data.csId)
-        // sessionStorage.setItem('csName', res.data.csName)
-        // sessionStorage.setItem('nickName', res.data.nickName)
-        // sessionStorage.setItem('servTimes', res.data.servTimes)
-        // sessionStorage.setItem('userType', res.data.userType)
-        // sessionStorage.setItem('likesCount', res.data.likesCount)
-        // sessionStorage.setItem('giftCount', res.data.giftCount)
         const loginInfo = {
           csId: res.data.csId,
           csName: res.data.csName,
