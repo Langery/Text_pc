@@ -1,6 +1,6 @@
 <template>
   <nav class="nav_title navbar navbar-expand-sm bg-light navbar-inverse">
-    <h3 class="title_name">华夏视频客服后台操作系统</h3>
+    <h3 class="title_name">System</h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +10,7 @@
           <a class="nav-link">{{item.name}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">今日数据</a>
+          <a class="nav-link">Today data</a>
         </li>
         <li class="nav-item">
           <a class="nav-link">
@@ -77,6 +77,7 @@ export default {
   .title_name{
     float: left;
     width:245px;
+    text-align: start;
     height:40px;
     font-size:20px;
     font-family:'MicrosoftYaHei';

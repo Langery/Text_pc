@@ -19,13 +19,13 @@
 </template>
 
 <script>
-import one from '@/assets/icon1.png'
-import two from '@/assets/icon2.png'
+// import one from '@/assets/icon1.png'
+// import two from '@/assets/icon2.png'
 
 export default {
   name: 'SideBar',
   computed: {
-    screenType() {
+    screenType () {
       return this.csType === 2
     }
   },
@@ -36,14 +36,13 @@ export default {
       csType: null,
       jumpList: [
         {
-          //img: one,
-         // link: '/user/home/user=12345678'
+          // img: one,
+          // link: '/user/home/user=12345678'
         }
       ]
     }
   },
   mounted () {
-
     this.$nextTick(() => {
       /*
       const indexShow = document.getElementById('showindex')
@@ -57,13 +56,12 @@ export default {
       // window.onload = function(){
       const loginInfo=sessionStorage.getItem('loginInfo');
       debugger
-      document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), "http://127.0.0.1:8080/")*/
+      document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), "http://127.0.0.1:8080/")
+      */
       // }
     })
-
   },
   methods: {
-
   }
 }
 </script>
