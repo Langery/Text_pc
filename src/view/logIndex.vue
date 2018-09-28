@@ -47,7 +47,7 @@ export default {
       noBoth: false,
       noUser: false,
       noPass: false,
-      logtitle: '华夏在线客服登录系统',
+      logtitle: 'Login System',
       forpwd: '忘记密码',
       regfont: '我们将会发送重置密码邮件到您的登录邮箱',
       backlog: '返回登录',
