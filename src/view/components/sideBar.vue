@@ -1,6 +1,6 @@
 <template>
   <div class="row_left">
-    <img class="logotop" alt="" src="@/assets/logo.png" />
+    <!-- <img class="logotop" alt="" src="@/assets/logo.png" /> -->
     <ul class="nav nav-list flex-column">
       <li>
         <router-link :to="{path: '/home'}"><img src="@/assets/icon1.png" alt=""><span class="badge badge-danger">1</span></router-link>
