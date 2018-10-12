@@ -2,8 +2,7 @@
   <div class="mainInfor">
     <!-- 集成区域start -->
     <div style="margin-top:65px;margin-left:75px">
-      <iframe frameborder=0   id="showindex" name="showHere"
-              scrolling="auto">
+      <iframe frameborder=0   id="showindex" name="showHere" scrolling="auto">
       </iframe>
     </div>
     <!-- 集成区域end -->
@@ -13,7 +12,7 @@
 <script>
 window.onload = function () {
   // const loginInfo = sessionStorage.getItem('loginInfo')
-  document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'http://127.0.0.1:8080')
+  document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'http://localhost:8080')
   // document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'https://vnap-webrtctest.ihxlife.com')
 }
 export default {
@@ -34,7 +33,6 @@ export default {
     // alert(1);
     this.$nextTick(() => {
       const indexShow = document.getElementById('showindex')
-      // indexShow.src = "https://vnap-webrtctest.ihxlife.com/videocs/home"
       indexShow.src = 'http://127.0.0.1:8080/videocs/home'
       const deviceWidth = document.documentElement.clientWidth
       const deviceHeight = document.documentElement.clientHeight
