@@ -19,9 +19,6 @@
 </template>
 
 <script>
-// import one from '@/assets/icon1.png'
-// import two from '@/assets/icon2.png'
-
 export default {
   name: 'SideBar',
   computed: {
@@ -82,7 +79,6 @@ iframe{
   width: 70px;
   height: 100vh;
   background: $sidecolor;
-  // overflow: hidden;
   .logotop{
     display: inline-block;
     width: 36px;

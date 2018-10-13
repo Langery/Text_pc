@@ -19,9 +19,6 @@
         </li>
       </ul>
     </div>
-    <!-- <div class="tologin" v-if="showLogin">
-      <router-link :to="{path: '/login'}">登录</router-link>
-    </div> -->
   </nav>
 </template>
 
@@ -44,7 +41,7 @@ export default {
   methods: {
     ClassMove (index) {
       this.current = index
-      console.log(index)
+      // console.log(index)
       if (index === 2) {
         console.log('========================> log out')
         this.$router.replace({path: '/login'})

@@ -221,7 +221,6 @@ export default {
       margin-top: 55px;
       margin-bottom: 20px;
       color: $white;
-      // font-weight: bold;
       font-size:28px;
       font-family:'MicrosoftYaHei';
     }
