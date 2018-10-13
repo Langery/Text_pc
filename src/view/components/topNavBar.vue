@@ -44,10 +44,18 @@ export default {
   methods: {
     ClassMove (index) {
       this.current = index
-      const data = {
-        roomId: '123456789'
+      console.log(index)
+      if (index === 2) {
+        console.log('========================> log out')
+        this.$router.replace({path: '/login'})
+      } else {
+        // console.log('========================> change status')
+        const data = {
+          roomId: '123456789',
+          operType: index
+        }
+        this._getChangeStatus(data)
       }
-      this._getChangeStatus(data)
     },
     LoginShow (event) {
       this.showLogin = !this.showLogin
@@ -55,7 +63,7 @@ export default {
     async _getChangeStatus (data) {
       const res = await changestatus(data)
       if (res.result.code === ERR_OK) {
-        console.log(res)
+        // console.log(res)
         console.log('=====================> get change status success')
       } else {
         console.log('=====================> get change status error')
