@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { ERR_OK, changestatus } from '@/server/index.js'
+
 export default {
   name: 'TopnavBar',
   data () {
@@ -42,9 +44,22 @@ export default {
   methods: {
     ClassMove (index) {
       this.current = index
+      const data = {
+        roomId: '123456789'
+      }
+      this._getChangeStatus(data)
     },
     LoginShow (event) {
       this.showLogin = !this.showLogin
+    },
+    async _getChangeStatus (data) {
+      const res = await changestatus(data)
+      if (res.result.code === ERR_OK) {
+        console.log(res)
+        console.log('=====================> get change status success')
+      } else {
+        console.log('=====================> get change status error')
+      }
     }
   }
 }

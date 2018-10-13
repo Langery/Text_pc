@@ -2,7 +2,7 @@
   <div class="mainInfor">
     <!-- 集成区域start -->
     <div style="margin-top:65px;margin-left:75px">
-      <iframe frameborder=0   id="showindex" name="showHere" scrolling="auto">
+      <iframe frameborder=0 id="showindex" name="showHere" scrolling="auto">
       </iframe>
     </div>
     <!-- 集成区域end -->
