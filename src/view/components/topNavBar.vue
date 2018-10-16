@@ -1,6 +1,6 @@
 <template>
   <nav class="nav_title navbar navbar-expand-sm bg-light navbar-inverse">
-    <h3 class="title_name">System</h3>
+    <h3 class="title_name">服务系统</h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,9 +8,6 @@
       <ul class="navbar-nav">
         <li class="nav-item" v-for="(item, index) in ClickList" :key="index" v-on:click="ClassMove(index)" v-bind:class="{active:index==current}">
           <a class="nav-link">{{item.name}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">Today data</a>
         </li>
         <li class="nav-item">
           <a class="nav-link">
