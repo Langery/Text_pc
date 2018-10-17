@@ -2,8 +2,7 @@
   <div class="mainInfor">
     <!-- 集成区域start -->
     <div style="margin-top:65px;margin-left:75px">
-      <iframe frameborder=0   id="showindex" name="showHere"
-              scrolling="auto">
+      <iframe frameborder=0   id="showindex" name="showHere" src="http://localhost:8080/videocs/home" scrolling="auto" style="min-width: calc(100vw - 90px);min-height: calc(100vh - 60px)">
       </iframe>
     </div>
     <!-- 集成区域end -->
@@ -11,11 +10,6 @@
 </template>
 
 <script>
-window.onload = function () {
-  // const loginInfo = sessionStorage.getItem('loginInfo')
-  document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'http://127.0.0.1:8080')
-  // document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), 'https://vnap-webrtctest.ihxlife.com')
-}
 export default {
   data () {
     return {
@@ -31,15 +25,11 @@ export default {
     }
   },
   mounted () {
-    // alert(1);
     this.$nextTick(() => {
       const indexShow = document.getElementById('showindex')
-      // indexShow.src = "https://vnap-webrtctest.ihxlife.com/videocs/home"
-      indexShow.src = 'http://127.0.0.1:8080/videocs/home'
-      const deviceWidth = document.documentElement.clientWidth
-      const deviceHeight = document.documentElement.clientHeight
-      indexShow.style.width = deviceWidth + 'px'
-      indexShow.style.height = deviceHeight + 'px'
+      indexShow.onload = function () {
+        document.getElementById('showindex').contentWindow.postMessage(sessionStorage.getItem('loginInfo'), '*')
+      }
       this.csType = this.$route.query.csType ? this.$route.query.csType : 1
     })
   },

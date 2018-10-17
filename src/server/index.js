@@ -18,6 +18,10 @@ export const createRoom = async(roomId, roomname) => http.post('RTCRoom', '/comm
  ************************************ 座席端 public ************************************
  */
 /**
+ * [changestatus 登录状态]
+ */
+export const changestatus = data => http.post('RTCRoom', '/comm/room/changestatus', data)
+/**
  * [consumerLogin 用户登录]
  */
 export const consumerLogin = data => http.post('public', '/video/cs/login', data)

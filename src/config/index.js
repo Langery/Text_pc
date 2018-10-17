@@ -1,7 +1,5 @@
 /*
 * @Author: Lahy
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-07-18 14:29:00
 */
 // import ENV from './env';
 const env = process.env.NODE_ENV

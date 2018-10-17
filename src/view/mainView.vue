@@ -3,7 +3,7 @@
     <side-bar></side-bar>
     <top-bar></top-bar>
     <keep-alive>
-         <router-view></router-view>
+      <router-view></router-view>
     </keep-alive>
   </div>
 </template>

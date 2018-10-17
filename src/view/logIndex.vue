@@ -72,7 +72,6 @@ export default {
         this.$nextTick(() => {
           console.log('==========================> jump to index')
           sessionStorage.setItem('roomid', res.data.roomId)
-          console.log(sessionStorage.csId)
           this.$router.replace({path: '/home'})
         })
       } else {
@@ -131,13 +130,10 @@ export default {
         this.noUser = true
       } else {
         console.log('============================> input success')
-        // cs-test1
-        // 123456
         const data = {
           loginName: username,
           password: userpass
         }
-        // console.log(sessionStorage)
         this._setUserLoginInfor(data)
       }
     },
@@ -225,7 +221,6 @@ export default {
       margin-top: 55px;
       margin-bottom: 20px;
       color: $white;
-      // font-weight: bold;
       font-size:28px;
       font-family:'MicrosoftYaHei';
     }

@@ -38,11 +38,6 @@ export default new Router({
           path: '/user/setting',
           name: 'SettingIndex',
           component: () => import('@/view/mainView/settingIndex.vue')
-        },
-        {
-          path: '/online',
-          name: 'online',
-          component: () => import('@/view/faceArea')
         }
       ]
     },
