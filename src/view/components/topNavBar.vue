@@ -103,8 +103,8 @@ export default {
     }
   }
   .active{
-    color: $sidecolor;
-    border-bottom: 3px solid $sidecolor;
+    color: #6ED763;
+    /*border-bottom: 3px solid $sidecolor;*/
   }
 }
 .tologin{
