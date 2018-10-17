@@ -1,6 +1,6 @@
 <template>
   <nav class="nav_title navbar navbar-expand-sm bg-light navbar-inverse">
-    <h3 class="title_name">System</h3>
+    <h3 class="title_name">服务系统</h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,22 +10,18 @@
           <a class="nav-link">{{item.name}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Today data</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link">
             <img src="@/images/k.jpg" alt="" v-on:click="LoginShow()">
           </a>
         </li>
       </ul>
     </div>
-    <!-- <div class="tologin" v-if="showLogin">
-      <router-link :to="{path: '/login'}">登录</router-link>
-    </div> -->
   </nav>
 </template>
 
 <script>
+import { ERR_OK, changestatus } from '@/server/index.js'
+
 export default {
   name: 'TopnavBar',
   data () {
@@ -42,9 +38,30 @@ export default {
   methods: {
     ClassMove (index) {
       this.current = index
+      // console.log(index)
+      if (index === 2) {
+        console.log('========================> log out')
+        this.$router.replace({path: '/login'})
+      } else {
+        // console.log('========================> change status')
+        const data = {
+          roomId: '123456789',
+          operType: index
+        }
+        this._getChangeStatus(data)
+      }
     },
     LoginShow (event) {
       this.showLogin = !this.showLogin
+    },
+    async _getChangeStatus (data) {
+      const res = await changestatus(data)
+      if (res.result.code === ERR_OK) {
+        // console.log(res)
+        console.log('=====================> get change status success')
+      } else {
+        console.log('=====================> get change status error')
+      }
     }
   }
 }
