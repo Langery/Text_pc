@@ -123,6 +123,14 @@ export default {
     color: #6ED763;
     /*border-bottom: 3px solid $sidecolor;*/
   }
+  .active:before {
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #6ED763;
+  }
 }
 .tologin{
   display: inline-block;
