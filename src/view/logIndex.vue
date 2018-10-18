@@ -88,6 +88,7 @@ export default {
         console.log('==========================> post success')
         const loginInfo = {
           csId: res.data.csId,
+          csCode: res.data.csCode,
           csName: res.data.csName,
           nickName: res.data.nickName,
           servTimes: res.data.servTimes,
