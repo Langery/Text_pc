@@ -94,7 +94,8 @@ export default {
           servTimes: res.data.servTimes,
           userType: res.data.userType,
           likesCount: res.data.likesCount,
-          giftCount: res.data.giftCount
+          giftCount: res.data.giftCount,
+          headUrl: res.data.headUrl,
         }
         sessionStorage.setItem('loginInfo', JSON.stringify(loginInfo))
         console.log(sessionStorage)
