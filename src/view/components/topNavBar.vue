@@ -42,6 +42,7 @@ export default {
       if (index === 2) {
         console.log('========================> log out')
         this.$router.replace({path: '/login'})
+        localStorage.clear()
       } else {
         // console.log('========================> change status')
         const data = {
