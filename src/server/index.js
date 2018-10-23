@@ -12,7 +12,7 @@ export const getLoginInfo = userId => http.get('RTCRoom', `/im/account/login?use
 /**
  * [createRoom 创建房间]
  */
-export const createRoom = async(roomId, roomname) => http.post('RTCRoom', '/comm/room/create', {roomId, roomname})
+// export const createRoom = async(roomId, roomname) => http.post('RTCRoom', '/comm/room/create', {roomId, roomname})
 
 /**
  ************************************ 座席端 public ************************************

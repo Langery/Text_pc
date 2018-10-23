@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { ERR_OK, consumerLogin, createRoom } from '@/server/index.js'
+import { ERR_OK, consumerLogin } from '@/server/index.js'
 import { mapMutations } from 'vuex'
 
 export default {
@@ -64,21 +64,21 @@ export default {
       this.registerShow = !this.registerShow
     },
     // 创建房间
-    async _createRoom (roomId, roomname) {
-      const res = await createRoom(roomId, roomname)
-      console.log(res)
-      if (res.result.code === ERR_OK) {
-        console.log('==========================> create room success')
-        this.$nextTick(() => {
-          console.log('==========================> jump to index')
-          sessionStorage.setItem('roomid', res.data.roomId)
-          this.$router.replace({path: '/home'})
-        })
-      } else {
-        console.log('==========================> create room error')
-        this.errorInput = true
-      }
-    },
+    // async _createRoom (roomId, roomname) {
+    //   const res = await createRoom(roomId, roomname)
+    //   console.log(res)
+    //   if (res.result.code === ERR_OK) {
+    //     console.log('==========================> create room success')
+    //     this.$nextTick(() => {
+    //       console.log('==========================> jump to index')
+    //       sessionStorage.setItem('roomid', res.data.roomId)
+    //       this.$router.replace({path: '/home'})
+    //     })
+    //   } else {
+    //     console.log('==========================> create room error')
+    //     this.errorInput = true
+    //   }
+    // },
     // request
     async _setUserLoginInfor (data) {
       const res = await consumerLogin(data)
@@ -97,12 +97,15 @@ export default {
           giftCount: res.data.giftCount,
           headUrl: res.data.headUrl
         }
+        // debugger
         sessionStorage.setItem('loginInfo', JSON.stringify(loginInfo))
         console.log(sessionStorage)
         this.setCustomInfo(res.data)
-        const roomId = sessionStorage.csId
-        const roomname = sessionStorage.csName
-        this._createRoom(roomId, roomname)
+        // const roomId = sessionStorage.csId
+        // const roomname = sessionStorage.csName
+        // this._createRoom(roomId, roomname)
+        sessionStorage.setItem('roomid', res.data.roomId)
+        this.$router.replace({path: '/home'})
       } else {
         console.log('===========================> post error ')
       }
