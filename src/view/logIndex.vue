@@ -95,7 +95,7 @@ export default {
           userType: res.data.userType,
           likesCount: res.data.likesCount,
           giftCount: res.data.giftCount,
-          headUrl: res.data.headUrl,
+          headUrl: res.data.headUrl
         }
         sessionStorage.setItem('loginInfo', JSON.stringify(loginInfo))
         console.log(sessionStorage)
