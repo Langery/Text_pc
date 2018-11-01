@@ -1,6 +1,9 @@
 import * as types from './mutation-types'
 
 const mutations = {
+  [types.SET_CUSTOM_DATA] (state, info) {
+    state.customData = info
+  },
   [types.SET_ROOM_ID] (state, id) {
     state.roomId = id
   },

@@ -1,5 +1,7 @@
 export const SET_ROOM_ID = 'SET_ROOM_ID'
 
+export const SET_CUSTOM_DATA = 'SET_CUSTOM_DATA'
+
 export const SET_MSGS = 'SET_MSGS'
 
 export const SET_FULL_SCREEN = 'SET_FULL_SCREEN'

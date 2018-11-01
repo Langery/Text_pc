@@ -10,3 +10,5 @@ export const roomMode = state => state.roomMode
 export const queueMode = state => state.queueMode
 // 视频截图模式
 export const screenShotImage = state => state.screenShotImage
+// 客户信息
+export const customData = state => state.customData
