@@ -1,7 +1,3 @@
-// 用户基本信息
-export const userInfo = state => state.userInfo
-// 客户信息
-export const customData = state => state.customData
 // 会话房间
 export const roomId = state => state.roomId
 // 聊天信息队列

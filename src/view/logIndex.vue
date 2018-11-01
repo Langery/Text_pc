@@ -37,6 +37,7 @@
 </template>
 
 <script>
+// import Bus from '@/script/bus.js'
 import { ERR_OK, consumerLogin } from '@/server/index.js'
 import { mapMutations } from 'vuex'
 
@@ -86,6 +87,12 @@ export default {
       // console.log(ERR_OK) 0
       if (res.result.code === ERR_OK) {
         console.log('==========================> post success')
+        // Bus.$on('status', (index) => {
+        //   alert(index)
+        //   if (index === 1) {
+        //     alert('当前客服正在小憩')
+        //   }
+        // })
         const loginInfo = {
           csId: res.data.csId,
           csCode: res.data.csCode,

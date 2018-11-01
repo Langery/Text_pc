@@ -20,6 +20,7 @@
 </template>
 
 <script>
+// import Bus from '@/script/bus.js'
 import { ERR_OK, changestatus } from '@/server/index.js'
 
 export default {
@@ -39,6 +40,7 @@ export default {
     ClassMove (index) {
       this.current = index
       // console.log(index)
+      // Bus.$emit('status', index)
       if (index === 2) {
         console.log('========================> log out')
         this.$router.replace({path: '/login'})
