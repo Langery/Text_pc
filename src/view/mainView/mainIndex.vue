@@ -2,7 +2,7 @@
   <div class="mainInfor">
     <!-- 集成区域start -->
     <div style="margin-top:65px;margin-left:75px">
-      <iframe frameborder=0   id="showindex" name="showHere" src="http://localhost:8080/videocs/home" scrolling="auto" style="min-width: calc(100vw - 90px);min-height: calc(100vh - 60px)">
+      <iframe frameborder=0 id="showindex" name="showHere" src="http://localhost:8080/videocs/home?csCode=test1000003" scrolling="auto" style="min-width: calc(100vw - 90px);min-height: calc(100vh - 60px)">
       </iframe>
     </div>
     <!-- 集成区域end -->
